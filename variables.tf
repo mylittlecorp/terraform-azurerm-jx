@@ -4,11 +4,11 @@ variable "cluster_name" {
 }
 variable "node_count" {
   type    = number
-  default = 1
+  default = 3
 }
 variable "node_size" {
   type    = string
-  default = "Standard_B2ms"
+  default = "Standard_D4_v3"
 }
 variable "dns_prefix" {
   type    = string
@@ -16,11 +16,11 @@ variable "dns_prefix" {
 }
 variable "cluster_version" {
   type    = string
-  default = "1.15.11"
+  default = "1.17.19"
 }
 variable "location" {
   type    = string
-  default = "australiaeast"
+  default = "westeurope"
 }
 variable "network_resource_group" {
   type    = string
@@ -116,7 +116,7 @@ variable "external_dns_enabled" {
 variable "enable_backup" {
   description = "Whether or not Velero backups should be enabled"
   type        = bool
-  default     = false
+  default     = true
 }
 
 variable "velero_namespace" {
@@ -176,13 +176,13 @@ variable "vault_resource_group" {
 variable "git_owner_requirement_repos" {
   description = "The git id of the owner for the requirement repositories"
   type        = string
-  default     = ""
+  default     = "mylittlecorp"
 }
 
 variable "dev_env_approvers" {
   description = "List of git users allowed to approve pull request for dev environment repository"
   type        = list(string)
-  default     = []
+  default     = [hervelemeur]
 }
 
 variable "lets_encrypt_production" {
