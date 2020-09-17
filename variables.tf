@@ -182,7 +182,7 @@ variable "git_owner_requirement_repos" {
 variable "dev_env_approvers" {
   description = "List of git users allowed to approve pull request for dev environment repository"
   type        = list(string)
-  default     = [hervelemeur]
+  default     = []
 }
 
 variable "lets_encrypt_production" {
